@@ -1,0 +1,5 @@
+{
+    "powerquery.client.additionalSymbolsDirectories": [
+        "/Users/igordvoretskii/Documents/aeromar-python/frontend/.vscode/excel-pq-symbols"
+    ]
+}

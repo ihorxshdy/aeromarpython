@@ -1,0 +1,160 @@
+INFO:     Started server process [91342]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Ошибка чтения drivers.csv: 'FULL_NAME'
+✅ Загружено 147 водителей из CSV (кодировка: utf-8-sig)
+INFO:     127.0.0.1:58409 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58423 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58424 - "GET /drivers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58425 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58423 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58424 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+DEBUG: Получен файл размером 12577 байт
+DEBUG: Успешно декодировано с кодировкой utf-8
+DEBUG: Декодированный текст (первые 200 символов): '\ufeffFLIGHT;FROM;TO;STD;STA;TYPE;AC\r\nSU1424;SVO;UFA;0:05;2:20;32A;73763\r\nSU1942;SVO;ALA;0:05;4:30;32B;73714\r\nSU1484;SVO;KJA;0:05;4:30;32B;73166\r\nSU1524;SVO;RGK;0:10;4:35;73H;73110\r\nFV6347;SVO;GOJ;0:10;1:0'
+DEBUG: Количество строк после split: 356
+DEBUG: Первая строка: '\ufeffFLIGHT;FROM;TO;STD;STA;TYPE;AC'
+DEBUG: Вторая строка: 'SU1424;SVO;UFA;0:05;2:20;32A;73763'
+DEBUG: Detected delimiter: ';'
+DEBUG: Headers found: ['FLIGHT', 'FROM', 'TO', 'STD', 'STA', 'TYPE', 'AC']
+DEBUG: Raw first line: 'FLIGHT;FROM;TO;STD;STA;TYPE;AC'
+DEBUG: Header after split and upper: ['FLIGHT', 'FROM', 'TO', 'STD', 'STA', 'TYPE', 'AC']
+DEBUG: Column 'FLIGHT' found at index 0
+DEBUG: Column 'FROM' found at index 1
+DEBUG: Column 'TO' found at index 2
+DEBUG: Column 'ROUTE' NOT FOUND in headers
+DEBUG: Column 'STD' found at index 3
+DEBUG: Column 'STA' found at index 4
+DEBUG: Column 'TYPE' found at index 5
+DEBUG: Column 'AC' found at index 6
+DEBUG: Column indices - flight:0, from:1, to:2, route:-1
+DEBUG: Column indices - std:3, sta:4, type:5, ac:6
+DEBUG: Row 1, Flight SU1424
+  TYPE column (aircraft type): '32A'
+  AC column (tail number): '73763'
+  STD string: '0:05'
+  Parts: ['SU1424', 'SVO', 'UFA', '0:05', '2:20', '32A', '73763']
+DEBUG: Successfully parsed std_min = 5, flight_date = 2025-10-06 from std_str = '0:05'
+DEBUG: Flight SU1424, AC Type: 32A, is_dms: False, Final Flight Type: SMS
+DEBUG: Row 2, Flight SU1942
+  TYPE column (aircraft type): '32B'
+  AC column (tail number): '73714'
+  STD string: '0:05'
+  Parts: ['SU1942', 'SVO', 'ALA', '0:05', '4:30', '32B', '73714']
+DEBUG: Successfully parsed std_min = 5, flight_date = 2025-10-06 from std_str = '0:05'
+DEBUG: Flight SU1942, AC Type: 32B, is_dms: False, Final Flight Type: SMS
+DEBUG: Row 3, Flight SU1484
+  TYPE column (aircraft type): '32B'
+  AC column (tail number): '73166'
+  STD string: '0:05'
+  Parts: ['SU1484', 'SVO', 'KJA', '0:05', '4:30', '32B', '73166']
+DEBUG: Successfully parsed std_min = 5, flight_date = 2025-10-06 from std_str = '0:05'
+DEBUG: Flight SU1484, AC Type: 32B, is_dms: False, Final Flight Type: SMS
+DEBUG: Row 4, Flight SU1524
+  TYPE column (aircraft type): '73H'
+  AC column (tail number): '73110'
+  STD string: '0:10'
+  Parts: ['SU1524', 'SVO', 'RGK', '0:10', '4:35', '73H', '73110']
+DEBUG: Successfully parsed std_min = 10, flight_date = 2025-10-06 from std_str = '0:10'
+DEBUG: Flight SU1524, AC Type: 73H, is_dms: False, Final Flight Type: SMS
+DEBUG: Row 5, Flight FV6347
+  TYPE column (aircraft type): 'SU9'
+  AC column (tail number): '89146'
+  STD string: '0:10'
+  Parts: ['FV6347', 'SVO', 'GOJ', '0:10', '1:05', 'SU9', '89146']
+DEBUG: Successfully parsed std_min = 10, flight_date = 2025-10-06 from std_str = '0:10'
+DEBUG: Flight FV6347, AC Type: SU9, is_dms: False, Final Flight Type: SMS
+DEBUG: Импортировано 355 рейсов из CSV
+DEBUG: flights_storage теперь содержит 355 рейсов
+INFO:     127.0.0.1:58428 - "POST /flights/import-csv HTTP/1.1" 200 OK
+🔴 DEBUG: Starting bracket scheduling for 355 flights
+🔴 DEBUG: Flights in storage: ['SU1424', 'SU1942', 'SU1484', 'SU1524', 'FV6347']...
+🔴 DEBUG: BracketScheduler created, calling plan_brackets...
+🔴 DEBUG: plan_brackets completed
+🔴 DEBUG: Created 87 brackets, 241 assignments, 114 unassigned
+🔴 DEBUG: Updated flight assignments in storage
+INFO:     127.0.0.1:58428 - "POST /brackets/create-schedule HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58428 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58469 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58470 - "GET /drivers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58472 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58469 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58470 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58469 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58474 - "GET /drivers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58474 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58469 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58474 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58535 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58536 - "GET /drivers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58537 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58535 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58536 - "GET /drivers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58535 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58541 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58535 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58541 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58541 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58553 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58555 - "GET /drivers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58556 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58553 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58555 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58556 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58560 - "GET /drivers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58560 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58556 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58556 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+Не найдено подходящих смен для брекетов 03:25 - 12:00
+Не удалось найти подходящую смену для водителя 5223
+Не найдено подходящих смен для брекетов -3:45 - 01:00
+Не удалось найти подходящую смену для водителя 6996
+Не найдено подходящих смен для брекетов -3:55 - 01:10
+Не удалось найти подходящую смену для водителя 2999
+Не найдено подходящих смен для брекетов -2:00 - 01:15
+Не удалось найти подходящую смену для водителя 5224
+Не найдено подходящих смен для брекетов -2:05 - 01:20
+Не удалось найти подходящую смену для водителя 10469
+Не найдено подходящих смен для брекетов -2:05 - 01:20
+Не удалось найти подходящую смену для водителя 5206
+Не найдено подходящих смен для брекетов 03:20 - 10:45
+Не удалось найти подходящую смену для водителя 5658
+Не найдено подходящих смен для брекетов 03:50 - 11:10
+Не удалось найти подходящую смену для водителя 5950
+Не найдено подходящих смен для брекетов 03:55 - 11:15
+Не удалось найти подходящую смену для водителя 8658
+Не найдено подходящих смен для брекетов 00:20 - 07:20
+Не удалось найти подходящую смену для водителя 2768
+Не найдено подходящих смен для брекетов -3:30 - 00:50
+Не удалось найти подходящую смену для водителя 8917
+Не найдено подходящих смен для брекетов -2:55 - 02:15
+Не удалось найти подходящую смену для водителя 8911
+Не найдено подходящих смен для брекетов -2:20 - 01:25
+Не удалось найти подходящую смену для водителя 10587
+DEBUG: Начинаем автоназначение смен
+DEBUG: Найдено 21 смен
+DEBUG: Найдено 355 рейсов
+DEBUG: Найдено 147 водителей
+DEBUG: Создаем планировщик брекетов
+DEBUG: Запускаем планирование брекетов
+DEBUG: Результат планирования: 87 брекетов
+DEBUG: Создаем сервис назначения смен
+DEBUG: Назначаем смены водителям
+DEBUG: Создано 44 назначений смен
+INFO:     127.0.0.1:58556 - "POST /shift-assignments/auto-assign HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58556 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58574 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58575 - "GET /drivers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58576 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58574 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58575 - "GET /drivers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58576 - "GET /flights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58574 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58576 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58576 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58574 - "GET /drivers/with-shifts HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [91342]

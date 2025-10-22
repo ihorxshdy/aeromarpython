@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../../../aeromar"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"powerquery.client.additionalSymbolsDirectories": [
+			"/Users/igordvoretskii/Documents/aeromar/.vscode/excel-pq-symbols"
+		]
+	}
+}

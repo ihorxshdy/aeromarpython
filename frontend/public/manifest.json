@@ -1,0 +1,33 @@
+{
+  "short_name": "Aeromar",
+  "name": "Aeromar Flight Planning System",
+  "description": "Система планирования полетов для аэропорта",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "theme_color": "#1976d2",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "lang": "ru",
+  "categories": ["productivity", "business"],
+  "prefer_related_applications": false
+}

@@ -1,0 +1,20 @@
+
+> aeroomar@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.0 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.3.186:3000
+
+ ✓ Starting...
+ ✓ Ready in 891ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1831ms
+ GET / 200 in 2093ms
+ ✓ Compiled /_not-found/page in 229ms
+ GET /manifest.json 404 in 325ms
+ GET /static/js/bundle.js 404 in 309ms
+ GET / 200 in 74ms
+ GET / 200 in 52ms
+ GET / 200 in 55ms
+ GET / 200 in 63ms
